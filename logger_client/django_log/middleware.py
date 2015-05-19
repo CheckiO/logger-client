@@ -40,4 +40,5 @@ class GlobalRequestLogger(object):
     @staticmethod
     def log(data, label=None, username=None):
         request_logger = GlobalRequestLogger.get_request_logger()
-        request_logger.log(data, label=label, username=username)
+        if request_logger is not None:
+            request_logger.log(data, label=label, username=username)
