@@ -28,7 +28,8 @@ class GlobalRequestLogger(object):
     @staticmethod
     def get_request_id():
         request_logger = GlobalRequestLogger.get_request_logger()
-        return request_logger.user_request_id
+        if request_logger is not None:
+            return request_logger.user_request_id
 
     @staticmethod
     def get_request_logger():
